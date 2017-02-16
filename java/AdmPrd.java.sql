@@ -60,7 +60,7 @@ public class AdmPrd {
 			}
 	}
 
-	public static long insertAdmPrd(int struct) throws SQLException {
+	public static long insertAdmPrd(Struct struct) throws SQLException {
 
 			StringBuilder errLog = new StringBuilder("AdmPrd: insertAdmPrd: ");
 
@@ -75,7 +75,7 @@ public class AdmPrd {
 			}
 	}
 
-	public static long updateAdmPrd(int struct) throws SQLException {
+	public static long updateAdmPrd(Struct struct) throws SQLException {
 
 			StringBuilder errLog = new StringBuilder("AdmPrd: updateAdmPrd: ");
 
