@@ -46,3 +46,93 @@ FUNCTION deleteAdminStaff(ADMIN_STAFF_KEY NUMBER) RETURN NUMBER;
 
 END PKG_ADMIN;
 /
+
+CREATE OR REPLACE PACKAGE BODY PKG_ADMIN IS
+
+FUNCTION getAdmPrdDx RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdmPrdDx.getAdmPrdDx() return java.sql.ResultSet';
+FUNCTION getAdmPrdDx(ADMPRDDX_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdmPrdDx.getAdmPrdDx(int) return java.sql.ResultSet';
+FUNCTION getAdmPrdDx(ADMPRDDX_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdmPrdDx.getAdmPrdDx(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdmPrdDx(ADM_PRD_DX_VAR ADM_PRD_DX_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdmPrdDx.insertAdmPrdDx(oracle.sql.STRUCT) return long';
+FUNCTION updateAdmPrdDx(ADM_PRD_DX_VAR ADM_PRD_DX_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdmPrdDx.updateAdmPrdDx(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdmPrdDx(ADM_PRD_DX_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdmPrdDx.deleteAdmPrdDx(int) return int';
+FUNCTION getAdmPrd RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdmPrd.getAdmPrd() return java.sql.ResultSet';
+FUNCTION getAdmPrd(ADMPRD_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdmPrd.getAdmPrd(int) return java.sql.ResultSet';
+FUNCTION getAdmPrd(ADMPRD_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdmPrd.getAdmPrd(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdmPrd(ADM_PRD_VAR ADM_PRD_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdmPrd.insertAdmPrd(oracle.sql.STRUCT) return long';
+FUNCTION updateAdmPrd(ADM_PRD_VAR ADM_PRD_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdmPrd.updateAdmPrd(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdmPrd(ADM_PRD_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdmPrd.deleteAdmPrd(int) return int';
+FUNCTION getAdminStaffStaffXwalk(BE_ID VARCHAR2) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXwalk.getAdminStaffStaffXwalk(java.lang.String) return java.sql.ResultSet';
+FUNCTION getAdminStaffStaffXwalk(ADMINSTAFFSTAFFXWALK_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXwalk.getAdminStaffStaffXwalk(int) return java.sql.ResultSet';
+FUNCTION getAdminStaffStaffXwalk(ADMINSTAFFSTAFFXWALK_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXwalk.getAdminStaffStaffXwalk(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdminStaffStaffXwalk(ADMIN_STAFF_STAFF_XWALK_VAR ADMIN_STAFF_STAFF_XWALK_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXwalk.insertAdminStaffStaffXwalk(oracle.sql.STRUCT) return long';
+FUNCTION updateAdminStaffStaffXwalk(ADMIN_STAFF_STAFF_XWALK_VAR ADMIN_STAFF_STAFF_XWALK_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXwalk.updateAdminStaffStaffXwalk(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdminStaffStaffXwalk(ADMIN_STAFF_STAFF_XWALK_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXwalk.deleteAdminStaffStaffXwalk(int) return int';
+FUNCTION getAdminStaffStaffXref(BE_ID VARCHAR2) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXref.getAdminStaffStaffXref(java.lang.String) return java.sql.ResultSet';
+FUNCTION getAdminStaffStaffXref(ADMINSTAFFSTAFFXREF_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXref.getAdminStaffStaffXref(int) return java.sql.ResultSet';
+FUNCTION getAdminStaffStaffXref(ADMINSTAFFSTAFFXREF_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXref.getAdminStaffStaffXref(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdminStaffStaffXref(ADMIN_STAFF_STAFF_XREF_VAR ADMIN_STAFF_STAFF_XREF_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXref.insertAdminStaffStaffXref(oracle.sql.STRUCT) return long';
+FUNCTION updateAdminStaffStaffXref(ADMIN_STAFF_STAFF_XREF_VAR ADMIN_STAFF_STAFF_XREF_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXref.updateAdminStaffStaffXref(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdminStaffStaffXref(ADMIN_STAFF_STAFF_XREF_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffStaffXref.deleteAdminStaffStaffXref(int) return int';
+FUNCTION getAdminStaffRel(BE_ID VARCHAR2) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffRel.getAdminStaffRel(java.lang.String) return java.sql.ResultSet';
+FUNCTION getAdminStaffRel(ADMINSTAFFREL_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffRel.getAdminStaffRel(int) return java.sql.ResultSet';
+FUNCTION getAdminStaffRel(ADMINSTAFFREL_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffRel.getAdminStaffRel(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdminStaffRel(ADMIN_STAFF_REL_VAR ADMIN_STAFF_REL_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffRel.insertAdminStaffRel(oracle.sql.STRUCT) return long';
+FUNCTION updateAdminStaffRel(ADMIN_STAFF_REL_VAR ADMIN_STAFF_REL_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffRel.updateAdminStaffRel(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdminStaffRel(ADMIN_STAFF_REL_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffRel.deleteAdminStaffRel(int) return int';
+FUNCTION getAdminStaffPt(BE_ID VARCHAR2) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffPt.getAdminStaffPt(java.lang.String) return java.sql.ResultSet';
+FUNCTION getAdminStaffPt(ADMINSTAFFPT_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffPt.getAdminStaffPt(int) return java.sql.ResultSet';
+FUNCTION getAdminStaffPt(ADMINSTAFFPT_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaffPt.getAdminStaffPt(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdminStaffPt(ADMIN_STAFF_PT_VAR ADMIN_STAFF_PT_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffPt.insertAdminStaffPt(oracle.sql.STRUCT) return long';
+FUNCTION updateAdminStaffPt(ADMIN_STAFF_PT_VAR ADMIN_STAFF_PT_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffPt.updateAdminStaffPt(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdminStaffPt(ADMIN_STAFF_PT_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaffPt.deleteAdminStaffPt(int) return int';
+FUNCTION getAdminStaff(BE_ID VARCHAR2) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaff.getAdminStaff(java.lang.String) return java.sql.ResultSet';
+FUNCTION getAdminStaff(ADMINSTAFF_KEY NUMBER) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaff.getAdminStaff(int) return java.sql.ResultSet';
+FUNCTION getAdminStaff(ADMINSTAFF_ARRAY STRING_ARRAY) RETURN REF_CURSOR
+AS LANGUAGE JAVA NAME 'AdminStaff.getAdminStaff(oracle.sql.ARRAY) return java.sql.ResultSet';
+FUNCTION insertAdminStaff(ADMIN_STAFF_VAR ADMIN_STAFF_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaff.insertAdminStaff(oracle.sql.STRUCT) return long';
+FUNCTION updateAdminStaff(ADMIN_STAFF_VAR ADMIN_STAFF_T) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaff.updateAdminStaff(oracle.sql.STRUCT) return long';
+FUNCTION deleteAdminStaff(ADMIN_STAFF_KEY NUMBER) RETURN NUMBER
+AS LANGUAGE JAVA NAME 'AdminStaff.deleteAdminStaff(int) return int';
+
+END PKG_ADMIN;
+/
